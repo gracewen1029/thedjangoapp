@@ -1,0 +1,27 @@
+<<!DOCTYPE html>
+<html>
+<head>
+ <title>Welcome to The Grace's Blog</title>
+</head>
+<body>
+ <!-- Site Header -->
+ <h1>Hi. I am Grace. Welcome to my blog!</h1>
+
+<!-- Blog Post -->
+ <h2>My First Blog Post</h2>
+ <p>Here is Joker Xue who is the best singer!!!!</p>
+ <p><img src="https://img.piaoniu.com/actor/avatar/927f5727b1c06c68dfdf13f2c83450eea04c4926.jpg" </p>
+<p>Joker Xue薛之谦 was born on 17 July 1983 in Shanghai. His mother had heart problems, which signified that it would be hard for her to have a child. Still, she had Xue. Ultimately, she died of a heart attack when he was four years old. In order to send him to university out of the country, his father sold his house to pay for tuition just enough for one year. Therefore in 2002, he began his studies in Hotel Management at Switzerland's Glion Institute of Higher Education. However, the second year became tough as money became an issue. Thus, Xue began working endlessly. He made CNY$200,000 that year. But he returned to Shanghai due to how homesick he was. Ultimately he chose to drop out instead to pursue music as a career. Upon returning, he was soon scouted by an entertainment agency and signed a contract as an actor.In 2004, Xue auditioned for a popular Chinese singing competition at the time, called My Show (我型我秀). Despite passing the audition, he did not participate in the competition due to various reasons. Yet, he re-auditioned in 2005, which he ended up passing by singing a self-composed song (黄色枫叶). Xue made it to the finals as the top 4 contestants; however did not become the winner. Still, Shanghai SUM Entertainment Ltd (上海上騰娛樂有限公司) offered him a 7-year contract, which he signed and also with which he started his career as a singer.</p>
+ <button>Like</button>
+ <h2>Leave a Comment</h2>
+ <form action="{% url 'blog:home_page' %}" method="POST">
+ {% csrf_token %}
+ <input type="text" placeholder="Please Enter Your username" name="username"><br><br>
+ <textarea name="comment" placeholder="Please Enter Your Comment"></textarea><br>
+ <input type="submit" value="Post Me!">
+ </form>
+
+<h2>Comments</h2>
+User {{comment.user}} says: {{comment.comment}}
+</body>
+</html>
